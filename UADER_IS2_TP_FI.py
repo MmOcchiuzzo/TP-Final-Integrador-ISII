@@ -10,11 +10,17 @@ def main():
         "cpu_id": str(uuid.getnode()),
         "id": "UADER-FCyT-IS2",
     }
+    print(str(uuid.getnode()))
 
     singleton = InterfazAWS(config_data["session_id"], config_data["cpu_id"])
+    psing2 = InterfazAWS(config_data["session_id"], config_data["cpu_id"])
+    if singleton==psing2:
+        print("Implementa un patron Singleton")
+    else:
+        print("No implementa un patron Singleton")
 
     print("\nConsulta de datos en CorporateData:")
-    print(singleton.consultar_datos_sede(config_data["session_id"], config_data["cpu_id"], config_data["id"]))
+    print(psing2.consultar_datos_sede(config_data["session_id"], config_data["cpu_id"], config_data["id"]))
 
     print("\nConsulta el CUIT en CorporateData:")
     print(singleton.consultar_cuit(config_data["session_id"], config_data["cpu_id"], config_data["id"]))

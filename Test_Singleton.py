@@ -6,7 +6,7 @@ class TestCorporateData(unittest.TestCase):
         instance1 = CorporateData.getInstance()
         instance2 = CorporateData.getInstance()
         
-        self.assertIs(instance1, instance2, "CorporateData no está implementado como Singleton correctamente.")
+        self.assertIs(instance1, instance2, "CorporateData no está implementado como patron Singleton correctamente.")
         
         print("ID de instancia 1:", id(instance1))
         print("ID de instancia 2:", id(instance2))
